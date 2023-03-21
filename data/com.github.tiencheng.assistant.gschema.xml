@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="assistant">
+	<schema id="com.github.tiencheng.assistant" path="/com/github/tiencheng/assistant/">
+	</schema>
+</schemalist>

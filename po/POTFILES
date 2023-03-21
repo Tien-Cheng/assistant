@@ -1,0 +1,6 @@
+data/com.github.tiencheng.assistant.desktop.in
+data/com.github.tiencheng.assistant.appdata.xml.in
+data/com.github.tiencheng.assistant.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

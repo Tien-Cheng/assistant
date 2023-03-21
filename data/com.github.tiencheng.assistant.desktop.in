@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=assistant
+Exec=assistant
+Icon=com.github.tiencheng.assistant
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true
