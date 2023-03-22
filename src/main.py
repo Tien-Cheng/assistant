@@ -18,24 +18,27 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import sys
+
 import gi
+from gi.repository import Adw, Gio
 
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
-
-from gi.repository import Gtk, Gio, Adw
 from .window import AssistantWindow
+
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
 
 
 class AssistantApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self):
-        super().__init__(application_id='com.github.tiencheng.assistant',
-                         flags=Gio.ApplicationFlags.FLAGS_NONE)
-        self.create_action('quit', self.quit, ['<primary>q'])
-        self.create_action('about', self.on_about_action)
-        self.create_action('preferences', self.on_preferences_action)
+        super().__init__(
+            application_id="com.github.tiencheng.assistant",
+            flags=Gio.ApplicationFlags.FLAGS_NONE,
+        )
+        self.create_action("quit", self.quit, ["<primary>q"])
+        self.create_action("about", self.on_about_action)
+        self.create_action("preferences", self.on_preferences_action)
 
     def do_activate(self):
         """Called when the application is activated.
@@ -50,18 +53,20 @@ class AssistantApplication(Adw.Application):
 
     def on_about_action(self, widget, _):
         """Callback for the app.about action."""
-        about = Adw.AboutWindow(transient_for=self.props.active_window,
-                                application_name='assistant',
-                                application_icon='com.github.tiencheng.assistant',
-                                developer_name='Oh Tien Cheng',
-                                version='0.1.0',
-                                developers=['Oh Tien Cheng'],
-                                copyright='© 2023 Oh Tien Cheng')
+        about = Adw.AboutWindow(
+            transient_for=self.props.active_window,
+            application_name="assistant",
+            application_icon="com.github.tiencheng.assistant",
+            developer_name="Oh Tien Cheng",
+            version="0.1.0",
+            developers=["Oh Tien Cheng"],
+            copyright="© 2023 Oh Tien Cheng",
+        )
         about.present()
 
     def on_preferences_action(self, widget, _):
         """Callback for the app.preferences action."""
-        print('app.preferences action activated')
+        print("app.preferences action activated")
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

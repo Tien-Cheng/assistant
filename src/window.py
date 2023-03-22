@@ -17,12 +17,12 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Adw
-from gi.repository import Gtk
+from gi.repository import Adw, Gtk
 
-@Gtk.Template(resource_path='/com/github/tiencheng/assistant/window.ui')
+
+@Gtk.Template(resource_path="/com/github/tiencheng/assistant/window.ui")
 class AssistantWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'AssistantWindow'
+    __gtype_name__ = "AssistantWindow"
 
     label = Gtk.Template.Child()
 
